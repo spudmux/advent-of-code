@@ -1,22 +1,21 @@
 package com.spudmux.aoc2020.day1;
 
+import com.spudmux.aoc2020.ProblemInput;
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 public class ExpenseReportProcessorTest {
 
+    private final ProblemInput problemInput = new ProblemInput();
+
     @Test
     public void testProcessReportWithSampleInput() {
-        String contents = getString("day1/expense-report-sample.txt");
+        String contents = problemInput.getInputAsString("day1/expense-report-sample.txt");
 
         ExpenseReportProcessor processor = new ExpenseReportProcessor();
         int result = processor.findTwoNumbers(Arrays.asList(contents.split("\n")));
@@ -34,7 +33,7 @@ public class ExpenseReportProcessorTest {
 
     @Test
     public void testProcessReportWithRealInput() {
-        String contents = getString("day1/expense-report-input.txt");
+        String contents = problemInput.getInputAsString("day1/expense-report-input.txt");
 
         ExpenseReportProcessor processor = new ExpenseReportProcessor();
         int result = processor.findTwoNumbers(Arrays.asList(contents.split("\n")));
@@ -44,7 +43,7 @@ public class ExpenseReportProcessorTest {
 
     @Test
     public void testFindThreeWithRealInput() {
-        String contents = getString("day1/expense-report-input.txt");
+        String contents = problemInput.getInputAsString("day1/expense-report-input.txt");
 
         ExpenseReportProcessor processor = new ExpenseReportProcessor();
         int result = processor.findThreeNumbers(Arrays.asList(contents.split("\n")));
@@ -54,7 +53,7 @@ public class ExpenseReportProcessorTest {
 
     @Test
     public void testFindThreeMatches() {
-        String contents = getString("day1/expense-report-sample.txt");
+        String contents = problemInput.getInputAsString("day1/expense-report-sample.txt");
 
         ExpenseReportProcessor processor = new ExpenseReportProcessor();
         int result = processor.findThreeNumbers(Arrays.asList(contents.split("\n")));
@@ -62,9 +61,6 @@ public class ExpenseReportProcessorTest {
     }
 
     private String getString(String fileName) {
-        InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(fileName);
-        assert inputStream != null;
-        return new BufferedReader(new InputStreamReader(inputStream))
-                .lines().collect(Collectors.joining("\n"));
+        return problemInput.getInputAsString(fileName);
     }
 }
