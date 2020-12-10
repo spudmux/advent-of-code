@@ -3,6 +3,7 @@ package com.spudmux.aoc2020;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,6 +37,6 @@ public class ProblemInput {
     }
 
     public List<String> getInputAsListOfLines(String fileName) {
-        return Arrays.asList(getInputAsString(fileName).split("\n"));
+        return new ArrayList(Arrays.asList(getInputAsString(fileName).split("\n")));
     }
 }
