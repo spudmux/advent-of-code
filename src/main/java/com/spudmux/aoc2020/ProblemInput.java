@@ -24,6 +24,10 @@ public class ProblemInput {
         return getInputAsString(inputFileName);
     }
 
+    public String getInputAsString() {
+        return getInputAsString(this.inputFileName);
+    }
+
     public String getInputAsString(String fileName) {
         InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(fileName);
         assert inputStream != null;
@@ -37,6 +41,16 @@ public class ProblemInput {
     }
 
     public List<String> getInputAsListOfLines(String fileName) {
-        return new ArrayList(Arrays.asList(getInputAsString(fileName).split("\n")));
+        return new ArrayList<>(Arrays.asList(getInputAsString(fileName).split("\n")));
+    }
+
+    public List<Integer> getInputAsListOfInts() {
+        List<Integer> integers = this
+                .getInputAsListOfLines()
+                .stream()
+                .mapToInt(Integer::parseInt)
+                .boxed()
+                .collect(Collectors.toList());
+        return integers;
     }
 }

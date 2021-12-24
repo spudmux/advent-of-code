@@ -8,29 +8,35 @@ else
 fi
 
 # Setup src files
-mkdir -p src/main/java/com/spudmux/aoc2020/day$1
-touch src/main/resources/day$1-input.txt
+mkdir -p src/main/java/com/spudmux/aoc2021/day$1
 
 # Setup test files
-mkdir -p src/test/java/com/spudmux/aoc2020/day$1
-touch src/test/resources/day$1-sample-input.txt
+mkdir -p src/test/java/com/spudmux/aoc2021/day$1
+touch src/test/resources/aoc2021/day$1-part1-sample-input.txt
+touch src/test/resources/aoc2021/day$1-part1-input.txt
 
 
 if [ ! -z $2 ]; then
   echo "creating "$2" class and test files"
-#  touch src/main/java/com/spudmux/aoc2020/day$1/$2.java
-  /bin/cat <<EOF >src/main/java/com/spudmux/aoc2020/day$1/$2.java
-package com.spudmux.aoc2020.day$1;
+#  touch src/main/java/com/spudmux/aoc2021/day$1/$2.java
+  /bin/cat <<EOF >src/main/java/com/spudmux/aoc2021/day$1/$2.java
+package com.spudmux.aoc2021.day$1;
+
+import com.spudmux.aoc2020.ProblemInput;
 
 public class $2 {
+    public $2(ProblemInput input) {
 
+    }
 }
 EOF
 
-#touch src/test/java/com/spudmux/aoc2020/day$1/$2Test.java
-  /bin/cat <<EOF >src/test/java/com/spudmux/aoc2020/day$1/$2Test.java
-package com.spudmux.aoc2020.day$1;
+#touch src/test/java/com/spudmux/aoc2021/day$1/$2Test.java
+  /bin/cat <<EOF >src/test/java/com/spudmux/aoc2021/day$1/$2Test.java
+package com.spudmux.aoc2021.day$1;
 
+import org.assertj.core.api.JUnitSoftAssertions;
+import org.junit.Rule;
 import com.spudmux.aoc2020.ProblemInput;
 import org.junit.Test;
 
@@ -38,14 +44,17 @@ import static org.assertj.core.api.Assertions.*;
 
 public class $2Test {
 
+  @Rule
+  public final JUnitSoftAssertions softly = new JUnitSoftAssertions();
+
   @Test public void test$2WithSampleInput() {
-    ProblemInput input = new ProblemInput("day$1-sample-input.txt");
-    $2 $(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}') = new $2();
+    ProblemInput input = new ProblemInput("aoc2021/day$1-part1-sample-input.txt");
+    $2 $(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}') = new $2(input);
   }
 
   @Test public void test$2WithProblemInput() {
-    ProblemInput input = new ProblemInput("day$1-input.txt");
-    $2 $(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}') = new $2();
+    ProblemInput input = new ProblemInput("aoc2021/day$1-part1-input.txt");
+    $2 $(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}') = new $2(input);
   }
 
 }
