@@ -28,6 +28,10 @@ public class ProblemInput {
         return getInputAsString(this.inputFileName);
     }
 
+    public int[] getInputAsIntArray() {
+        return Arrays.stream(getInputAsString().split(",")).mapToInt(Integer::parseInt).toArray();
+    }
+
     public String getInputAsString(String fileName) {
         InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(fileName);
         assert inputStream != null;
