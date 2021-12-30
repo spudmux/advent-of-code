@@ -15,6 +15,12 @@ mkdir -p src/test/java/com/spudmux/aoc2021/day$1
 touch src/test/resources/aoc2021/day$1-part1-sample-input.txt
 touch src/test/resources/aoc2021/day$1-part1-input.txt
 
+if ! aoc_cookie=$(security find-generic-password -w -s "Advent of code - cookie"); then
+  echo "could not get password, error $?"
+else
+  echo "Downloading problem input..."
+  curl --cookie "session=${aoc_cookie}" https://adventofcode.com/2021/day/12/input > src/test/resources/aoc2021/day$1-part1-input.txt
+fi
 
 if [ ! -z $2 ]; then
   echo "creating "$2" class and test files"
@@ -30,11 +36,11 @@ public class $2 {
     }
 
     public int solvePart1() {
-      return 0;
+        return 0;
     }
 
     public int solvePart2() {
-      return 0;
+        return 0;
     }
 
 }
