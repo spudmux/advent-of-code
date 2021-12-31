@@ -19,7 +19,7 @@ if ! aoc_cookie=$(security find-generic-password -w -s "Advent of code - cookie"
   echo "could not get password, error $?"
 else
   echo "Downloading problem input..."
-  curl --cookie "session=${aoc_cookie}" https://adventofcode.com/2021/day/12/input > src/test/resources/aoc2021/day$1-part1-input.txt
+  curl --cookie "session=${aoc_cookie}" https://adventofcode.com/2021/day/${1}/input > src/test/resources/aoc2021/day$1-part1-input.txt
 fi
 
 if [ ! -z $2 ]; then
