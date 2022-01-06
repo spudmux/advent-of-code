@@ -57,4 +57,17 @@ public class ProblemInput {
                 .collect(Collectors.toList());
         return integers;
     }
+
+    /**
+     * Gets the problem input as a 2D array of integers where each element is < 9.
+     * @return an array made up of each character from the input.
+     */
+    public int[][] getInputAs2DArray() {
+        List<String> lines = this.getInputAsListOfLines();
+        int[][] array = new int[lines.size()][lines.get(0).length()];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Arrays.stream(lines.get(i).split("")).mapToInt(Integer::parseInt).toArray();
+        }
+        return array;
+    }
 }
