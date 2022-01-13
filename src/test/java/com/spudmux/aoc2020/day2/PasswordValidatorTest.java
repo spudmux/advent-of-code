@@ -3,6 +3,7 @@ package com.spudmux.aoc2020.day2;
 import com.spudmux.aoc2020.ProblemInput;
 import org.junit.Test;
 
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -14,7 +15,7 @@ public class PasswordValidatorTest {
 
     @Test
     public void testSampleInput() {
-        ProblemInput input = new ProblemInput("day2-sample-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day2-sample-input.txt"));
         PasswordValidator validator = new PasswordValidator();
 
         int numberOfValidPasswords = validator.countValidPasswordsMatchingPolicyOne(input);
@@ -23,7 +24,7 @@ public class PasswordValidatorTest {
 
     @Test
     public void testProblemInput() {
-        ProblemInput input = new ProblemInput("day2-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day2-input.txt"));
         PasswordValidator validator = new PasswordValidator();
 
         int numberOfValidPasswords = validator.countValidPasswordsMatchingPolicyOne(input);
@@ -43,7 +44,7 @@ public class PasswordValidatorTest {
 
     @Test
     public void testSampleInputPart2() {
-        ProblemInput input = new ProblemInput("day2-sample-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day2-sample-input.txt"));
         PasswordValidator validator = new PasswordValidator();
 
         int numberOfValidPasswords = validator.countValidPasswordsMatchingPolicyTwo(input);
@@ -52,7 +53,7 @@ public class PasswordValidatorTest {
 
     @Test
     public void testProblemInputPart2() {
-        ProblemInput input = new ProblemInput("day2-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day2-input.txt"));
         PasswordValidator validator = new PasswordValidator();
 
         int numberOfValidPasswords = validator.countValidPasswordsMatchingPolicyTwo(input);

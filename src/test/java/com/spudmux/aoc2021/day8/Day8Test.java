@@ -5,6 +5,8 @@ import org.junit.Rule;
 import com.spudmux.aoc2020.ProblemInput;
 import org.junit.Test;
 
+import java.nio.file.Paths;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class Day8Test {
@@ -15,25 +17,25 @@ public class Day8Test {
   private String[] output;
 
   @Test public void testDay8WithSampleInput() {
-    ProblemInput input = new ProblemInput("aoc2021/day8-part1-sample-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("aoc2021/day8-part1-sample-input.txt"));
     Day8 day8 = new Day8(input);
     softly.assertThat(day8.countDigits()).isEqualTo(26);
   }
 
   @Test public void testDay8WithProblemInput() {
-    ProblemInput input = new ProblemInput("aoc2021/day8-part1-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("aoc2021/day8-part1-input.txt"));
     Day8 day8 = new Day8(input);
     softly.assertThat(day8.countDigits()).isEqualTo(288);
   }
 
   @Test public void testDay8Part2WithSampleInput() {
-    ProblemInput input = new ProblemInput("aoc2021/day8-part1-sample-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("aoc2021/day8-part1-sample-input.txt"));
     Day8 day8 = new Day8(input);
     softly.assertThat(day8.sumOutputs()).isEqualTo(61229);
   }
 
   @Test public void testDay8Part2WithProblemInput() {
-    ProblemInput input = new ProblemInput("aoc2021/day8-part1-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("aoc2021/day8-part1-input.txt"));
     Day8 day8 = new Day8(input);
     softly.assertThat(day8.sumOutputs()).isEqualTo(940724);
   }

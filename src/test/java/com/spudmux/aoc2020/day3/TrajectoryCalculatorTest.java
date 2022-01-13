@@ -5,13 +5,14 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.nio.file.Paths;
 
 import static org.junit.Assert.*;
 
 public class TrajectoryCalculatorTest {
 
     @Test public void testTreeCountWithSampleInput() {
-        ProblemInput input = new ProblemInput("day3-sample-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day3-sample-input.txt"));
 
         TrajectoryCalculator calculator = new TrajectoryCalculator();
         int numberOfTrees = calculator.getNumberOfTreesEncountered(input);
@@ -19,7 +20,7 @@ public class TrajectoryCalculatorTest {
     }
 
     @Test public void testTreeCountWithProblemInput() {
-        ProblemInput input = new ProblemInput("day3-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day3-input.txt"));
 
         TrajectoryCalculator calculator = new TrajectoryCalculator();
         int numberOfTrees = calculator.getNumberOfTreesEncountered(input);
@@ -27,7 +28,7 @@ public class TrajectoryCalculatorTest {
     }
 
     @Test public void testTreeCountWithSampleInputPartTwo() {
-        ProblemInput input = new ProblemInput("day3-sample-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day3-sample-input.txt"));
 
         TrajectoryCalculator calculator = new TrajectoryCalculator();
 
@@ -39,7 +40,7 @@ public class TrajectoryCalculatorTest {
     }
 
     @Test public void testTreeCountWithProblemInputPartTwo() {
-        ProblemInput input = new ProblemInput("day3-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day3-input.txt"));
 
         TrajectoryCalculator calculator = new TrajectoryCalculator();
 

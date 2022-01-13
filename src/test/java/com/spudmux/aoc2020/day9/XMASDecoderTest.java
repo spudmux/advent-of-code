@@ -3,6 +3,7 @@ package com.spudmux.aoc2020.day9;
 import com.spudmux.aoc2020.ProblemInput;
 import org.junit.Test;
 
+import java.nio.file.Paths;
 import java.util.Iterator;
 
 import static org.assertj.core.api.Assertions.*;
@@ -10,19 +11,19 @@ import static org.assertj.core.api.Assertions.*;
 public class XMASDecoderTest {
 
   @Test public void testXMASDecoderWithSampleInput() {
-    ProblemInput input = new ProblemInput("day9-sample-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("day9-sample-input.txt"));
     XMASDecoder xMASDecoder = new XMASDecoder(input.getInputAsListOfLines());
     assertThat(xMASDecoder.findFirstNumber(5, 5)).isEqualTo(127);
   }
 
   @Test public void testXMASDecoderWithProblemInput() {
-    ProblemInput input = new ProblemInput("day9-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("day9-input.txt"));
     XMASDecoder xMASDecoder = new XMASDecoder(input.getInputAsListOfLines());
     assertThat(xMASDecoder.findFirstNumber(25, 25)).isEqualTo(26796446);
   }
 
   @Test public void testXMASDecoderWithSampleInputPartTwo() {
-    ProblemInput input = new ProblemInput("day9-sample-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("day9-sample-input.txt"));
     XMASDecoder xMASDecoder = new XMASDecoder(input.getInputAsListOfLines());
     long firstNumber = xMASDecoder.findFirstNumber(5, 5);
     assertThat(firstNumber).isEqualTo(127);
@@ -30,7 +31,7 @@ public class XMASDecoderTest {
   }
 
   @Test public void testXMASDecoderWithProblemInputPartTwo() {
-    ProblemInput input = new ProblemInput("day9-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("day9-input.txt"));
     XMASDecoder xMASDecoder = new XMASDecoder(input.getInputAsListOfLines());
     long firstNumber = xMASDecoder.findFirstNumber(25, 25);
     assertThat(firstNumber).isEqualTo(26796446);

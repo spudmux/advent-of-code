@@ -63,25 +63,25 @@ public class $2Test {
   public final JUnitSoftAssertions softly = new JUnitSoftAssertions();
 
   @Test public void test$2Part1WithSampleInput() {
-    ProblemInput input = new ProblemInput("aoc2021/day$1-part1-sample-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("aoc2021/day$1-part1-sample-input.txt"));
     $2 $(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}') = new $2(input);
     softly.assertThat($(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}').solvePart1()).isEqualTo(-1);
   }
 
   @Test public void test$2Part1WithProblemInput() {
-    ProblemInput input = new ProblemInput("aoc2021/day$1-part1-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("aoc2021/day$1-part1-input.txt"));
     $2 $(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}') = new $2(input);
     softly.assertThat($(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}').solvePart1()).isEqualTo(-1);
   }
 
   @Test public void test$2Part2WithSampleInput() {
-    ProblemInput input = new ProblemInput("aoc2021/day$1-part1-sample-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("aoc2021/day$1-part1-sample-input.txt"));
     $2 $(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}') = new $2(input);
     softly.assertThat($(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}').solvePart2()).isEqualTo(-1);
   }
 
   @Test public void test$2Part2WithProblemInput() {
-    ProblemInput input = new ProblemInput("aoc2021/day$1-part1-input.txt");
+    ProblemInput input = new ProblemInput(Paths.get("aoc2021/day$1-part1-input.txt"));
     $2 $(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}') = new $2(input);
     softly.assertThat($(echo "$2" | awk '{print tolower(substr($0,1,1)) substr($0,2)}').solvePart2()).isEqualTo(-1);
   }

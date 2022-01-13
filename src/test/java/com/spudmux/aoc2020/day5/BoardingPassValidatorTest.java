@@ -6,12 +6,14 @@ import org.assertj.core.api.JUnitSoftAssertions;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.nio.file.Paths;
+
 public class BoardingPassValidatorTest {
 
     @Rule public final JUnitSoftAssertions softly = new JUnitSoftAssertions();
 
     @Test public void testGetHighestSeatIdOnSampleProblemInput() {
-        ProblemInput input = new ProblemInput("day5-sample-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day5-sample-input.txt"));
 
         BoardingPassValidator validator = new BoardingPassValidator();
         validator.process(input);
@@ -19,7 +21,7 @@ public class BoardingPassValidatorTest {
     }
 
     @Test public void testGetHighestSeatIdOnProblemInput() {
-        ProblemInput input = new ProblemInput("day5-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day5-input.txt"));
 
         BoardingPassValidator validator = new BoardingPassValidator();
         validator.process(input);
@@ -27,7 +29,7 @@ public class BoardingPassValidatorTest {
     }
 
     @Test public void testFindSeatOnProblemInput() {
-        ProblemInput input = new ProblemInput("day5-input.txt");
+        ProblemInput input = new ProblemInput(Paths.get("day5-input.txt"));
 
         BoardingPassValidator validator = new BoardingPassValidator();
         validator.process(input);
