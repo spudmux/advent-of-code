@@ -55,6 +55,8 @@ import org.junit.Rule;
 import com.spudmux.aoc2020.ProblemInput;
 import org.junit.Test;
 
+import java.nio.file.Paths;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class $2Test {
